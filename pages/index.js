@@ -1,4 +1,4 @@
-import {SearchBar} from "../components/search";
+import {SearchBar} from "../src/components/search-bar";
 
 export default() => (
     <div>
