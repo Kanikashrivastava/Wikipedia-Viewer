@@ -522,6 +522,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _article_details__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./article-details */ "./src/components/article-details.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var constants__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! constants */ "constants");
+/* harmony import */ var constants__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(constants__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -533,8 +535,9 @@ var _jsxFileName = "C:\\Users\\sonalika\\Documents\\react-apps\\wikipediaViewer\
 
 
 
-var RESULT_URL = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=";
-var Article_Page_URL = "https://en.wikipedia.org/?curid=";
+
+var RESULT_URL = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch="; // const Article_Page_URL  = "https://en.wikipedia.org/?curid=";
+
 var SearchBar =
 /*#__PURE__*/
 function (_React$Component) {
@@ -550,14 +553,9 @@ function (_React$Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getResultInfo", function () {
       axios__WEBPACK_IMPORTED_MODULE_9___default.a.get("".concat(RESULT_URL).concat(_this.search.value), {
         headers: {
-          'Access-Control-Allow-Origin': '*'
-        },
-        proxy: {
-          host: '104.236.174.88',
-          port: 3128
+          'Access-Control-Allow-Origin': 'https://en.wikipedia.org'
         }
-      }).then(function (_ref) {
-        var response = _ref.response;
+      }).then(function (response) {
         console.log(response);
       });
     });
@@ -594,14 +592,14 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 49
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 50
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -614,26 +612,26 @@ function (_React$Component) {
         onKeyPress: this.handleKeyPress,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 51
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         onClick: this.inputHandler,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 57
         },
         __self: this
       }, "Submit")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 59
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_article_details__WEBPACK_IMPORTED_MODULE_8__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 60
         },
         __self: this
       })));
@@ -666,6 +664,17 @@ module.exports = __webpack_require__(/*! C:\Users\sonalika\Documents\react-apps\
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "constants":
+/*!****************************!*\
+  !*** external "constants" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("constants");
 
 /***/ }),
 

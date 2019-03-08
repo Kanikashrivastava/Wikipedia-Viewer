@@ -1,10 +1,11 @@
 import React from 'react';
 import ArticleBox from './article-details'
 import axios from 'axios';
+import { DH_CHECK_P_NOT_PRIME } from 'constants';
 
 
 const RESULT_URL = `https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=`;
-const Article_Page_URL  = "https://en.wikipedia.org/?curid=";
+// const Article_Page_URL  = "https://en.wikipedia.org/?curid=";
 
 
 
@@ -18,17 +19,11 @@ export class SearchBar extends React.Component {
     }
 
     getResultInfo = () => {
-        axios.get(`${RESULT_URL}${this.search.value}`,{
+        axios.get(`${RESULT_URL}${this.search.value}`, {
             headers: {
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin': 'https://en.wikipedia.org',
               },
-              proxy: {
-                host: '104.236.174.88',
-                port: 3128
-              }
-        })
-        
-        .then(({ response }) => {
+        }).then(( response ) => {
             console.log(response);
         });
     }
